@@ -10,7 +10,6 @@ func Run(cmd *exec.Cmd) (string, *exec.ExitError) {
 	stdout, err := cmd.Output()
 	if err != nil {
 		if exitErr, ok := err.(*exec.ExitError); ok {
-			fmt.Print("[ERROR] stderr:", string(exitErr.Stderr))
 			return string(stdout), exitErr
 		}
 		fmt.Println("[ERROR] command failed without exit error")
