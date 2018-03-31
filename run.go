@@ -13,6 +13,7 @@ func Run(cmd *exec.Cmd) (string, *exec.ExitError) {
 			return string(stdout), exitErr
 		}
 		fmt.Println("[ERROR] command failed without exit error")
+		fmt.Println("[ERROR]", err)
 		return string(stdout), nil
 	}
 	return string(stdout), nil
